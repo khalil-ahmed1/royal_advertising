@@ -23,21 +23,9 @@
       --radius: 14px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-main); color: var(--text-white); line-height: 1.6; scroll-behavior: smooth; }
 
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg-main);
-      color: var(--text-white);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    /* Top Announcement Strip */
     .top-announcement {
       background: linear-gradient(90deg, #1e3a8a, #0284c7);
       color: #fff;
@@ -51,14 +39,8 @@
       gap: 1.5rem;
       flex-wrap: wrap;
     }
+    .top-announcement span { display: inline-flex; align-items: center; gap: 6px; }
 
-    .top-announcement span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* Navigation */
     nav {
       position: sticky;
       top: 0;
@@ -68,7 +50,6 @@
       z-index: 999;
       padding: 1rem 2rem;
     }
-
     .nav-wrap {
       max-width: 1250px;
       margin: auto;
@@ -77,7 +58,6 @@
       align-items: center;
       gap: 1.5rem;
     }
-
     .brand {
       font-size: 1.3rem;
       font-weight: 800;
@@ -88,23 +68,9 @@
       align-items: center;
       gap: 10px;
     }
-
-    .brand span {
-      color: var(--primary);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
-
+    .brand span { color: var(--primary); }
+    .nav-actions { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-links { display: flex; align-items: center; gap: 1.25rem; }
     .nav-link-item {
       color: var(--text-gray);
       text-decoration: none;
@@ -116,17 +82,9 @@
       align-items: center;
       gap: 6px;
     }
+    .nav-link-item:hover { color: var(--text-white); }
 
-    .nav-link-item:hover {
-      color: var(--text-white);
-    }
-
-    /* Contact Team Dropdown */
-    .dropdown-container {
-      position: relative;
-      display: inline-block;
-    }
-
+    .dropdown-container { position: relative; display: inline-block; }
     .btn-contact-team {
       background: rgba(56, 189, 248, 0.15);
       color: var(--primary);
@@ -142,13 +100,11 @@
       font-family: inherit;
       transition: all 0.2s ease;
     }
-
     .btn-contact-team:hover,
     .dropdown-container:hover .btn-contact-team {
       background: var(--primary);
       color: #0b0f19;
     }
-
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -163,12 +119,7 @@
       overflow: hidden;
       z-index: 1000;
     }
-
-    .dropdown-container:hover .dropdown-menu {
-      display: flex;
-      flex-direction: column;
-    }
-
+    .dropdown-container:hover .dropdown-menu { display: flex; flex-direction: column; }
     .dropdown-item {
       display: flex;
       align-items: center;
@@ -179,39 +130,17 @@
       font-weight: 600;
       transition: background 0.2s;
     }
+    .dropdown-item-wa { color: var(--whatsapp); border-bottom: 1px solid var(--border); }
+    .dropdown-item-wa:hover { background: rgba(34, 197, 94, 0.15); }
+    .dropdown-item-call { color: var(--accent); }
+    .dropdown-item-call:hover { background: rgba(245, 158, 11, 0.15); }
 
-    .dropdown-item-wa {
-      color: var(--whatsapp);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .dropdown-item-wa:hover {
-      background: rgba(34, 197, 94, 0.15);
-    }
-
-    .dropdown-item-call {
-      color: var(--accent);
-    }
-
-    .dropdown-item-call:hover {
-      background: rgba(245, 158, 11, 0.15);
-    }
-
-    /* Hero */
     .hero {
       padding: 5.5rem 1.5rem 4rem;
       text-align: center;
       background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.15) 0%, transparent 60%);
     }
-
-    .hero-badges {
-      display: flex;
-      justify-content: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.25rem;
-    }
-
+    .hero-badges { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
     .badge-pill {
       display: inline-flex;
       align-items: center;
@@ -220,44 +149,12 @@
       border-radius: 50px;
       font-size: 0.8rem;
       font-weight: 600;
-      letter-spacing: 0.5px;
     }
-
-    .badge-cyan {
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      color: var(--primary);
-    }
-
-    .badge-green {
-      background: rgba(34, 197, 94, 0.1);
-      border: 1px solid rgba(34, 197, 94, 0.3);
-      color: var(--whatsapp);
-    }
-
-    .hero h1 {
-      font-size: 2.75rem;
-      font-weight: 800;
-      max-width: 860px;
-      margin: 0 auto 1.25rem;
-      letter-spacing: -1px;
-      line-height: 1.2;
-    }
-
-    .hero p {
-      max-width: 650px;
-      margin: 0 auto 2.5rem;
-      color: var(--text-gray);
-      font-size: 1.05rem;
-    }
-
-    .cta-cluster {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
+    .badge-cyan { background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: var(--primary); }
+    .badge-green { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); color: var(--whatsapp); }
+    .hero h1 { font-size: 2.75rem; font-weight: 800; max-width: 860px; margin: 0 auto 1.25rem; line-height: 1.2; }
+    .hero p { max-width: 650px; margin: 0 auto 2.5rem; color: var(--text-gray); font-size: 1.05rem; }
+    .cta-cluster { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
     .btn-solid {
       background: var(--whatsapp);
       color: #fff;
@@ -269,14 +166,7 @@
       align-items: center;
       gap: 10px;
       box-shadow: 0 4px 20px rgba(34, 197, 94, 0.35);
-      transition: transform 0.2s, filter 0.2s;
     }
-
-    .btn-solid:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.1);
-    }
-
     .btn-outline {
       background: transparent;
       color: var(--text-white);
@@ -285,14 +175,8 @@
       border-radius: 10px;
       font-weight: 600;
       text-decoration: none;
-      transition: background 0.2s;
     }
 
-    .btn-outline:hover {
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    /* Features Strip */
     .features-strip {
       max-width: 1200px;
       margin: 1rem auto 5rem;
@@ -301,7 +185,6 @@
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.5rem;
     }
-
     .feature-item {
       background: var(--bg-surface);
       border: 1px solid var(--border);
@@ -311,89 +194,28 @@
       align-items: flex-start;
       gap: 1rem;
     }
+    .feature-item i { font-size: 1.5rem; color: var(--primary); margin-top: 3px; }
+    .feature-item div h4 { font-size: 0.95rem; font-weight: 600; }
+    .feature-item div p { font-size: 0.82rem; color: var(--text-gray); }
 
-    .feature-item i {
-      font-size: 1.5rem;
-      color: var(--primary);
-      margin-top: 3px;
-    }
+    .section-wrap { max-width: 1200px; margin: 0 auto; padding: 4rem 1.5rem; }
+    .section-head { margin-bottom: 2.5rem; }
+    .section-head h2 { font-size: 2rem; font-weight: 700; }
+    .section-head p { color: var(--text-gray); font-size: 0.95rem; }
 
-    .feature-item div h4 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .feature-item div p {
-      font-size: 0.82rem;
-      color: var(--text-gray);
-    }
-
-    /* Section Layout */
-    .section-wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 1.5rem;
-    }
-
-    .section-head {
-      margin-bottom: 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .section-head h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-
-    .section-head p {
-      color: var(--text-gray);
-      font-size: 0.95rem;
-    }
-
-    /* Gallery Grid */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
     }
-
     .gallery-card {
       background: var(--bg-surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
-      transition: border-color 0.2s, transform 0.2s;
     }
-
-    .gallery-card:hover {
-      border-color: rgba(56, 189, 248, 0.4);
-      transform: translateY(-4px);
-    }
-
-    .gallery-img-box {
-      position: relative;
-      height: 230px;
-      overflow: hidden;
-      background: #000;
-    }
-
-    .gallery-img-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s;
-    }
-
-    .gallery-card:hover .gallery-img-box img {
-      transform: scale(1.05);
-    }
-
+    .gallery-img-box { position: relative; height: 240px; background: #161e2e; }
+    .gallery-img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .tag {
       position: absolute;
       top: 1rem;
@@ -406,22 +228,10 @@
       font-weight: 600;
       color: var(--primary);
     }
+    .gallery-info { padding: 1.5rem; }
+    .gallery-info h3 { font-size: 1.15rem; margin-bottom: 0.35rem; }
+    .gallery-info p { color: var(--text-gray); font-size: 0.85rem; }
 
-    .gallery-info {
-      padding: 1.5rem;
-    }
-
-    .gallery-info h3 {
-      font-size: 1.15rem;
-      margin-bottom: 0.35rem;
-    }
-
-    .gallery-info p {
-      color: var(--text-gray);
-      font-size: 0.85rem;
-    }
-
-    /* Contact Details */
     .contact-layout {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
@@ -431,45 +241,11 @@
       border-radius: calc(var(--radius) * 1.5);
       padding: 3rem;
     }
-
-    .contact-info-block h3 {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-    }
-
-    .contact-info-block p {
-      color: var(--text-gray);
-      margin-bottom: 2rem;
-      font-size: 0.95rem;
-    }
-
-    .details-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .detail-entry {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .detail-entry i {
-      font-size: 1.25rem;
-      color: var(--primary);
-      margin-top: 3px;
-    }
-
-    .detail-entry strong {
-      display: block;
-      font-size: 0.95rem;
-      margin-bottom: 2px;
-    }
-
-    .detail-entry span {
-      color: var(--text-gray);
-      font-size: 0.85rem;
-    }
+    .details-list { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.5rem; }
+    .detail-entry { display: flex; gap: 1rem; }
+    .detail-entry i { font-size: 1.25rem; color: var(--primary); margin-top: 3px; }
+    .detail-entry strong { display: block; font-size: 0.95rem; }
+    .detail-entry span { color: var(--text-gray); font-size: 0.85rem; }
 
     .social-direct-panel {
       background: var(--bg-card);
@@ -480,24 +256,7 @@
       flex-direction: column;
       justify-content: space-between;
     }
-
-    .social-direct-panel h4 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .social-direct-panel p {
-      color: var(--text-gray);
-      font-size: 0.85rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .link-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
-    }
-
+    .link-stack { display: flex; flex-direction: column; gap: 0.85rem; margin-top: 1.5rem; }
     .action-link {
       display: flex;
       align-items: center;
@@ -507,13 +266,7 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 0.9rem;
-      transition: opacity 0.2s;
     }
-
-    .action-link:hover {
-      opacity: 0.92;
-    }
-
     .link-wa { background: #22c55e; color: #fff; }
     .link-ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); color: #fff; }
     .link-call { background: #e11d48; color: #fff; }
@@ -528,7 +281,6 @@
 
     @media (max-width: 900px) {
       .nav-wrap { flex-direction: column; align-items: stretch; }
-      .nav-actions { justify-content: space-between; flex-wrap: wrap; }
       .contact-layout { grid-template-columns: 1fr; padding: 2rem; }
       .hero h1 { font-size: 2.1rem; }
     }
@@ -549,12 +301,8 @@
 
       <div class="nav-actions">
         <div class="nav-links">
-          <a href="#work" class="nav-link-item">
-            <i class="fa-solid fa-images"></i> Previous Work
-          </a>
-          <a href="#sign-types" class="nav-link-item">
-            <i class="fa-solid fa-bolt"></i> Sign Types
-          </a>
+          <a href="#work" class="nav-link-item"><i class="fa-solid fa-images"></i> Previous Work</a>
+          <a href="#sign-types" class="nav-link-item"><i class="fa-solid fa-bolt"></i> Sign Types</a>
         </div>
 
         <div class="dropdown-container">
@@ -601,14 +349,14 @@
       <i class="fa-solid fa-truck-plane"></i>
       <div>
         <h4>All India Delivery</h4>
-        <p>Secure wooden crate packaging and pan-India transport right to your doorstep</p>
+        <p>Secure wooden crate packaging and transport right to your doorstep</p>
       </div>
     </div>
     <div class="feature-item">
       <i class="fa-solid fa-lightbulb"></i>
       <div>
         <h4>High-Lumen LEDs</h4>
-        <p>Uniform diffusion across boards and letters with zero dark spots or shadows</p>
+        <p>Uniform diffusion across boards and letters with zero dark spots</p>
       </div>
     </div>
     <div class="feature-item">
@@ -622,43 +370,52 @@
 
   <section class="section-wrap" id="work">
     <div class="section-head">
-      <div>
-        <h2>Completed Illuminated Installations</h2>
-        <p>Recent work featuring full-board backlights and 3D individual letter illumination</p>
-      </div>
+      <h2>Completed Illuminated Installations</h2>
+      <p>Recent work featuring full-board backlights and 3D individual letter illumination</p>
     </div>
 
-    <div class="gallery-grid" id="portfolioGrid">
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <div class="gallery-img-box">
+          <span class="tag">Whole Board Light</span>
+          <img src="./images/board1.jpg" onerror="this.onerror=null; this.src='./images/board1.png';" alt="Full Flex Lightbox" />
+        </div>
+        <div class="gallery-info">
+          <h3>Full Flex Glow Lightbox</h3>
+          <p>Translucent backlit star flex with waterproof internal high-lumen LED modules.</p>
+        </div>
       </div>
-  </section>
 
-  <section class="section-wrap" id="sign-types" style="background: var(--bg-surface); border-radius: var(--radius); margin-bottom: 4rem;">
-    <div class="section-head">
-      <div>
-        <h2>Lighting Options & Fabrication Types</h2>
-        <p>Choose the right illumination method for your business storefront</p>
-      </div>
-    </div>
-    <div class="features-strip" style="margin: 0; padding: 0;">
-      <div class="feature-item" style="background: var(--bg-card);">
-        <i class="fa-solid fa-sun"></i>
-        <div>
-          <h4>Whole Boards By Light (Full Glow Box)</h4>
-          <p>The entire flex board surface illuminates evenly at night using high-density translucent backlit fabric.</p>
+      <div class="gallery-card">
+        <div class="gallery-img-box">
+          <span class="tag">Words By Light</span>
+          <img src="./images/board2.jpg" onerror="this.onerror=null; this.src='./images/board2.png';" alt="3D Acrylic Letters" />
+        </div>
+        <div class="gallery-info">
+          <h3>3D Raised Acrylic Letter Glow</h3>
+          <p>Laser-cut individual alphabet letters with internal LED illumination.</p>
         </div>
       </div>
-      <div class="feature-item" style="background: var(--bg-card);">
-        <i class="fa-solid fa-font"></i>
-        <div>
-          <h4>Words By Light (3D Letter Signs)</h4>
-          <p>Individual 3D acrylic raised letters where only the alphabet words and company logo light up.</p>
+
+      <div class="gallery-card">
+        <div class="gallery-img-box">
+          <span class="tag">ACP Cutout Light</span>
+          <img src="./images/board3.jpg" onerror="this.onerror=null; this.src='./images/board3.png';" alt="ACP Route-Cut Signboard" />
+        </div>
+        <div class="gallery-info">
+          <h3>Matte ACP Route-Cut Signboard</h3>
+          <p>Precision route-cut ACP panel with bright face acrylic word illumination.</p>
         </div>
       </div>
-      <div class="feature-item" style="background: var(--bg-card);">
-        <i class="fa-solid fa-wand-magic-sparkles"></i>
-        <div>
-          <h4>Neon & Edge-Lit Lettering</h4>
-          <p>Custom flexible neon and halo-effect back-lit lettering for showrooms, salons, and cafés.</p>
+
+      <div class="gallery-card">
+        <div class="gallery-img-box">
+          <span class="tag">Whole Board Light</span>
+          <img src="./images/board4.jpg" onerror="this.onerror=null; this.src='./images/board4.png';" alt="Storefront Board" />
+        </div>
+        <div class="gallery-info">
+          <h3>Commercial Backlit Storefront Board</h3>
+          <p>Even internal diffusion across the entire banner surface with heavy steel casing.</p>
         </div>
       </div>
     </div>
@@ -678,7 +435,6 @@
               <span>Shop, 2137 Gali No. 02, Pahar Ganj, New Delhi</span>
             </div>
           </div>
-
           <div class="detail-entry">
             <i class="fa-solid fa-truck"></i>
             <div>
@@ -686,7 +442,6 @@
               <span>All India Delivery Available (Safe Crate Packing & Courier Transport)</span>
             </div>
           </div>
-
           <div class="detail-entry">
             <i class="fa-solid fa-clock"></i>
             <div>
@@ -694,7 +449,6 @@
               <span>Open every time — feel free to text or call 24/7 to discuss project dimensions</span>
             </div>
           </div>
-
           <div class="detail-entry">
             <i class="fa-solid fa-phone-volume"></i>
             <div>
@@ -716,12 +470,10 @@
             <span><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp (24/7)</span>
             <i class="fa-solid fa-arrow-right"></i>
           </a>
-
           <a href="https://www.instagram.com/royal_advertising_delhi?igsh=MTFtajc3Z3RlMWgwbw==" target="_blank" class="action-link link-ig">
             <span><i class="fa-brands fa-instagram"></i> Instagram (@royal_advertising_delhi)</span>
             <i class="fa-solid fa-arrow-right"></i>
           </a>
-
           <a href="tel:+919639142196" class="action-link link-call">
             <span><i class="fa-solid fa-phone"></i> Call +91 96391 42196</span>
             <i class="fa-solid fa-arrow-right"></i>
@@ -734,78 +486,6 @@
   <footer>
     <p>&copy; 2026 Royal Advertising. All rights reserved. | 2137 Gali No. 02, Pahar Ganj, New Delhi | All India Delivery</p>
   </footer>
-
-  <script>
-    const projectSlots = [
-      {
-        fileName: "board1.jpg",
-        tag: "Whole Board Light",
-        title: "Full Flex Glow Lightbox",
-        desc: "Translucent backlit star flex with waterproof internal high-lumen LED modules."
-      },
-      {
-        fileName: "board2.jpg",
-        tag: "Words By Light",
-        title: "3D Raised Acrylic Letter Glow",
-        desc: "Laser-cut individual alphabet letters with internal LED illumination."
-      },
-      {
-        fileName: "board3.jpg",
-        tag: "ACP Cutout Light",
-        title: "Matte ACP Route-Cut Signboard",
-        desc: "Precision route-cut ACP panel with bright face acrylic word illumination."
-      },
-      {
-        fileName: "board4.jpg",
-        tag: "Whole Board Light",
-        title: "Commercial Backlit Storefront Board",
-        desc: "Even internal diffusion across the entire banner surface with steel casing."
-      },
-      {
-        fileName: "board5.jpg",
-        tag: "Words By Light",
-        title: "Neon & 3D Word Lettering",
-        desc: "Custom glowing typography letters built for high showroom visibility."
-      },
-      {
-        fileName: "board6.jpg",
-        tag: "All India Delivery",
-        title: "Custom Illuminated Sign Crate",
-        desc: "Secure wooden-frame crating engineered for safe damage-free shipping across India."
-      }
-    ];
-
-    const grid = document.getElementById("portfolioGrid");
-
-    projectSlots.forEach((item, index) => {
-      const card = document.createElement("div");
-      card.className = "gallery-card";
-      card.id = `card-${index}`;
-
-      const img = new Image();
-      img.src = `images/${item.fileName}`;
-      img.alt = item.title;
-
-      img.onload = function() {
-        card.innerHTML = `
-          <div class="gallery-img-box">
-            <span class="tag">${item.tag}</span>
-            <img src="images/${item.fileName}" alt="${item.title}" />
-          </div>
-          <div class="gallery-info">
-            <h3>${item.title}</h3>
-            <p>${item.desc}</p>
-          </div>
-        `;
-        grid.appendChild(card);
-      };
-
-      // If the photo hasn't been uploaded yet, do not display an empty card
-      img.onerror = function() {
-        card.remove();
-      };
-    });
-  </script>
 
 </body>
 </html>
