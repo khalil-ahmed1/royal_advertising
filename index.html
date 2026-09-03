@@ -20,7 +20,7 @@
       --text-gray: #9ca3af;
       --whatsapp: #22c55e;
       --border: rgba(255, 255, 255, 0.08);
-      --radius: 16px;
+      --radius: 14px;
     }
 
     * {
@@ -36,7 +36,7 @@
       color: var(--text-white);
       line-height: 1.5;
       scroll-behavior: smooth;
-      padding-bottom: 74px; /* Space for mobile floating action bar */
+      padding-bottom: 74px;
     }
 
     /* Top Announcement Strip */
@@ -290,11 +290,11 @@
       font-size: 0.88rem;
     }
 
-    /* Mobile Swipeable Gallery */
+    /* Responsive Gallery */
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
     }
 
     .gallery-card {
@@ -308,31 +308,36 @@
     .gallery-img-box {
       position: relative;
       width: 100%;
-      aspect-ratio: 4 / 3;
-      background: #151d2c;
+      height: 240px;
+      background: #090d16;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
     }
 
     .gallery-img-box img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
+      padding: 8px;
     }
 
     .tag {
       position: absolute;
-      top: 0.85rem;
-      left: 0.85rem;
-      background: rgba(10, 14, 23, 0.88);
+      top: 0.75rem;
+      left: 0.75rem;
+      background: rgba(10, 14, 23, 0.85);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      padding: 0.3rem 0.65rem;
+      padding: 0.25rem 0.65rem;
       border-radius: 6px;
       font-size: 0.72rem;
       font-weight: 700;
       color: var(--primary);
       border: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 2;
     }
 
     .gallery-info {
@@ -351,7 +356,7 @@
       line-height: 1.4;
     }
 
-    /* Contact Block */
+    /* Contact Details Block */
     .contact-layout {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
@@ -442,7 +447,7 @@
     .link-ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); color: #fff; }
     .link-call { background: #e11d48; color: #fff; }
 
-    /* Sticky Mobile Bottom Quick Action Bar */
+    /* Sticky Bottom Navigation Bar for Mobile Phones */
     .mobile-dock {
       display: none;
       position: fixed;
@@ -479,16 +484,8 @@
       text-align: center;
     }
 
-    .dock-btn-wa {
-      background: #22c55e;
-      color: #fff;
-    }
-
-    .dock-btn-call {
-      background: #1f2937;
-      color: var(--text-white);
-      border: 1px solid var(--border);
-    }
+    .dock-btn-wa { background: #22c55e; color: #fff; }
+    .dock-btn-call { background: #1f2937; color: var(--text-white); border: 1px solid var(--border); }
 
     footer {
       border-top: 1px solid var(--border);
@@ -498,53 +495,72 @@
       font-size: 0.8rem;
     }
 
-    /* Responsive adjustments for phones (Under 768px) */
+    /* Mobile specific adjustments (Phones under 768px) */
     @media (max-width: 768px) {
-      .nav-links { display: none; } /* Kept clean; mobile uses the bottom quick dock */
+      .nav-links { display: none; }
       .mobile-dock { display: block; }
 
+      .hero {
+        padding: 2.25rem 1rem 1.75rem;
+      }
+
       .hero h1 {
-        font-size: 1.85rem;
+        font-size: 1.65rem;
+        line-height: 1.3;
+      }
+
+      /* Clean full-width vertical card feed for smartphone screens */
+      .gallery-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      .gallery-card {
+        width: 100%;
+      }
+
+      .gallery-img-box {
+        height: auto;
+        min-height: 220px;
+        max-height: 320px;
+        background: #090d16;
+      }
+
+      .gallery-img-box img {
+        height: auto;
+        max-height: 320px;
+        width: 100%;
+        object-fit: contain;
+        padding: 6px;
+      }
+
+      .gallery-info {
+        padding: 1rem 1.15rem;
       }
 
       .contact-layout {
         grid-template-columns: 1fr;
-        padding: 1.5rem;
-        gap: 1.5rem;
-      }
-
-      /* Horizontal Snap Carousel on small devices for photos */
-      .gallery-grid {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        gap: 1rem;
-        padding-bottom: 1rem;
-      }
-
-      .gallery-card {
-        min-width: 82%;
-        scroll-snap-align: center;
-        flex-shrink: 0;
+        padding: 1.25rem;
+        gap: 1.25rem;
       }
 
       .features-strip {
         grid-template-columns: 1fr;
-        margin-bottom: 2.5rem;
+        margin-bottom: 2rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Announcement Strip -->
+  <!-- Announcement Bar -->
   <div class="top-announcement">
     <span><i class="fa-solid fa-clock"></i> 24/7 Consultation Open</span>
     <span><i class="fa-solid fa-truck-fast"></i> Safe All India Delivery</span>
   </div>
 
-  <!-- Navigation -->
+  <!-- Header / Navigation -->
   <nav>
     <div class="nav-wrap">
       <a href="#" class="brand">
@@ -582,7 +598,7 @@
     </div>
   </header>
 
-  <!-- Features Highlight -->
+  <!-- Trust Highlights -->
   <div class="features-strip">
     <div class="feature-item">
       <i class="fa-solid fa-comments"></i>
@@ -607,11 +623,11 @@
     </div>
   </div>
 
-  <!-- Portfolio Gallery (Mobile-friendly horizontal snap) -->
+  <!-- Portfolio Gallery (Phone & Desktop Adaptive) -->
   <section class="section-wrap" id="work">
     <div class="section-head">
       <h2>Recent Work & Fabrication</h2>
-      <p>Swipe horizontally on mobile to view completed boards</p>
+      <p>Custom backlit illuminated installations</p>
     </div>
 
     <div class="gallery-grid">
@@ -619,7 +635,7 @@
       <div class="gallery-card">
         <div class="gallery-img-box">
           <span class="tag">Whole Board Light</span>
-          <img src="./images/board1.png" alt="Full Flex Glow Lightbox" loading="lazy" />
+          <img src="images/board1.png" alt="Full Flex Glow Lightbox" loading="lazy" />
         </div>
         <div class="gallery-info">
           <h3>Full Flex Glow Lightbox</h3>
@@ -631,7 +647,7 @@
       <div class="gallery-card">
         <div class="gallery-img-box">
           <span class="tag">Words By Light</span>
-          <img src="./images/board2.png" alt="3D Raised Acrylic Letter Glow" loading="lazy" />
+          <img src="images/board2.png" alt="3D Raised Acrylic Letter Glow" loading="lazy" />
         </div>
         <div class="gallery-info">
           <h3>3D Raised Acrylic Letter Glow</h3>
@@ -643,7 +659,7 @@
       <div class="gallery-card">
         <div class="gallery-img-box">
           <span class="tag">ACP Cutout Light</span>
-          <img src="./images/board3.png" alt="Matte ACP Route-Cut Signboard" loading="lazy" />
+          <img src="images/board3.png" alt="Matte ACP Route-Cut Signboard" loading="lazy" />
         </div>
         <div class="gallery-info">
           <h3>Matte ACP Route-Cut Signboard</h3>
@@ -655,7 +671,7 @@
       <div class="gallery-card">
         <div class="gallery-img-box">
           <span class="tag">Whole Board Light</span>
-          <img src="./images/board4.png" alt="Commercial Backlit Storefront Board" loading="lazy" />
+          <img src="images/board4.png" alt="Commercial Backlit Storefront Board" loading="lazy" />
         </div>
         <div class="gallery-info">
           <h3>Commercial Backlit Storefront Board</h3>
@@ -665,12 +681,12 @@
     </div>
   </section>
 
-  <!-- Contact & Workshop Location -->
+  <!-- Workshop & Contact -->
   <section class="section-wrap" id="contact">
     <div class="contact-layout">
       <div class="contact-info-block">
         <h3>Visit Royal Advertising</h3>
-        <p>Drop by our Pahar Ganj workshop or get in touch directly to finalize your signboard dimensions.</p>
+        <p>Drop by our Pahar Ganj workshop or contact us directly to discuss your project dimensions.</p>
 
         <div class="details-list">
           <div class="detail-entry">
@@ -700,7 +716,7 @@
       <div class="social-direct-panel">
         <div>
           <h4>Get Instant Quote</h4>
-          <p>Send your shop dimensions directly to our team via WhatsApp or check our Instagram.</p>
+          <p>Send your dimensions to our team on WhatsApp or check our Instagram.</p>
         </div>
 
         <div class="link-stack">
@@ -721,7 +737,7 @@
     </div>
   </section>
 
-  <!-- Sticky Quick Action Bar for Mobile Phones -->
+  <!-- Mobile Quick Action Dock -->
   <div class="mobile-dock">
     <div class="mobile-dock-inner">
       <a href="tel:+919639142196" class="dock-btn dock-btn-call">
