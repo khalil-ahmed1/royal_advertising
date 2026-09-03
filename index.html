@@ -628,40 +628,8 @@
       </div>
     </div>
 
-    <div class="gallery-grid">
-      <div class="gallery-card">
-        <div class="gallery-img-box">
-          <span class="tag">Full Glow Board</span>
-          <img src="images/board1.jpg" alt="Full Lightbox Signboard" onerror="this.src='https://images.unsplash.com/photo-1563986768609-322da13575f3?w=700&auto=format&fit=crop&q=80'" />
-        </div>
-        <div class="gallery-info">
-          <h3>Full Flex Lightbox Board</h3>
-          <p>Translucent backlit star flex mounted on a galvanized iron box with high-output internal LED lighting.</p>
-        </div>
+    <div class="gallery-grid" id="portfolioGrid">
       </div>
-
-      <div class="gallery-card">
-        <div class="gallery-img-box">
-          <span class="tag">Words By Light</span>
-          <img src="images/glowsign.jpg" alt="3D Acrylic Letters by Light" onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?w=700&auto=format&fit=crop&q=80'" />
-        </div>
-        <div class="gallery-info">
-          <h3>3D Acrylic Lettering by Light</h3>
-          <p>Individual raised laser-cut letters illuminated with waterproof internal LED modules.</p>
-        </div>
-      </div>
-
-      <div class="gallery-card">
-        <div class="gallery-img-box">
-          <span class="tag">ACP Cutout Light</span>
-          <img src="images/standee.jpg" alt="ACP Route Word Light Board" onerror="this.src='https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=700&auto=format&fit=crop&q=80'" />
-        </div>
-        <div class="gallery-info">
-          <h3>ACP Sheet + Word Glow Cutout</h3>
-          <p>Dark matte ACP paneling where only the shop branding and letters emit bright illumination.</p>
-        </div>
-      </div>
-    </div>
   </section>
 
   <section class="section-wrap" id="sign-types" style="background: var(--bg-surface); border-radius: var(--radius); margin-bottom: 4rem;">
@@ -766,6 +734,78 @@
   <footer>
     <p>&copy; 2026 Royal Advertising. All rights reserved. | 2137 Gali No. 02, Pahar Ganj, New Delhi | All India Delivery</p>
   </footer>
+
+  <script>
+    const projectSlots = [
+      {
+        fileName: "board1.jpg",
+        tag: "Whole Board Light",
+        title: "Full Flex Glow Lightbox",
+        desc: "Translucent backlit star flex with waterproof internal high-lumen LED modules."
+      },
+      {
+        fileName: "board2.jpg",
+        tag: "Words By Light",
+        title: "3D Raised Acrylic Letter Glow",
+        desc: "Laser-cut individual alphabet letters with internal LED illumination."
+      },
+      {
+        fileName: "board3.jpg",
+        tag: "ACP Cutout Light",
+        title: "Matte ACP Route-Cut Signboard",
+        desc: "Precision route-cut ACP panel with bright face acrylic word illumination."
+      },
+      {
+        fileName: "board4.jpg",
+        tag: "Whole Board Light",
+        title: "Commercial Backlit Storefront Board",
+        desc: "Even internal diffusion across the entire banner surface with steel casing."
+      },
+      {
+        fileName: "board5.jpg",
+        tag: "Words By Light",
+        title: "Neon & 3D Word Lettering",
+        desc: "Custom glowing typography letters built for high showroom visibility."
+      },
+      {
+        fileName: "board6.jpg",
+        tag: "All India Delivery",
+        title: "Custom Illuminated Sign Crate",
+        desc: "Secure wooden-frame crating engineered for safe damage-free shipping across India."
+      }
+    ];
+
+    const grid = document.getElementById("portfolioGrid");
+
+    projectSlots.forEach((item, index) => {
+      const card = document.createElement("div");
+      card.className = "gallery-card";
+      card.id = `card-${index}`;
+
+      const img = new Image();
+      img.src = `images/${item.fileName}`;
+      img.alt = item.title;
+
+      img.onload = function() {
+        card.innerHTML = `
+          <div class="gallery-img-box">
+            <span class="tag">${item.tag}</span>
+            <img src="images/${item.fileName}" alt="${item.title}" />
+          </div>
+          <div class="gallery-info">
+            <h3>${item.title}</h3>
+            <p>${item.desc}</p>
+          </div>
+        `;
+        grid.appendChild(card);
+      };
+
+      // If the photo hasn't been uploaded yet, do not display an empty card
+      img.onerror = function() {
+        card.remove();
+      };
+    });
+  </script>
 
 </body>
 </html>
